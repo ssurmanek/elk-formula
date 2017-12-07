@@ -89,7 +89,7 @@ logstash_service:
     - file: elastic_repo
     - service: elasticsearch
   service.running:
-    - name: logstash
+    - name: logstash1
     - enable: True
 
 nginx_static_site:
