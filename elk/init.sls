@@ -2,16 +2,12 @@ elastic_repos_key:
   cmd.run:
     - name: wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 
-{% for soft, repo in {
-  'elasticsearch': 'https://artifacts.elastic.co/packages/5.x/debian',
-  'logstash': 'https://artifacts.elastic.co/packages/5.x/debian',
-  }.items() %}
-{{ soft }}_repo:
+elastic_repo:
   file.managed:
-    - name: /etc/apt/sources.list.d/{{ soft }}.list
+    - name: /etc/apt/sources.list.d/elastic-5.x.list
     - require:
       - cmd: elastic_repos_key
-    - contents: deb {{ repo }} stable main
+    - contents: deb https://artifacts.elastic.co/packages/5.x/apt stable main
 
 {% endfor %}
 
