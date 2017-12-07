@@ -9,8 +9,6 @@ elastic_repo:
       - cmd: elastic_repos_key
     - contents: deb https://artifacts.elastic.co/packages/5.x/apt stable main
 
-{% endfor %}
-
 {% set kibana_port = salt['pillar.get']('kibana:httpport', '8080') %}
 {% set elastic_port = salt['pillar.get']('elasticsearch:httpport', '9200') %}
 {% set server_name = salt['pillar.get']('kibana:site_name', 'kibana.cdp') %}
