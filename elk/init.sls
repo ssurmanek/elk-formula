@@ -68,7 +68,9 @@ elastic_conf:
   file.managed:
     - name: '/etc/elasticsearch/elasticsearch.yml'
     - contents: |+
+          http.cors.enabled: true
           network.bind_host: {{ bind_host }}
+          http.cors.allow-origin: "http://{{ bind_host }}:8080"
     - mode: 644
     - require:
       - file: elasticsearch_repo
