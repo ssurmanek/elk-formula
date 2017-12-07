@@ -23,13 +23,13 @@ elasticsearch_soft:
   pkg.installed:
     - name: elasticsearch
     - require:
-      - file: elasticsearch_repo
+      - file: elastic_repo
 
 logstash_soft:
   pkg.installed:
     - name: logstash
     - require:
-      - file: logstash_repo
+      - file: elastic_repo
       - pkg: elasticsearch
 
 kibana_static_dir:
@@ -69,7 +69,7 @@ elastic_conf:
           http.cors.allow-origin: "http://{{ bind_host }}:8080"
     - mode: 644
     - require:
-      - file: elasticsearch_repo
+      - file: elastic_repo
 
 elastic_service:
   pkg.installed:
@@ -88,7 +88,7 @@ logstash_service:
   pkg.installed:
   - name: logstash
   - require:
-    - file: logstash_repo
+    - file: elastic_repo
     - service: elasticsearch
   service.running:
     - name: logstash
