@@ -128,4 +128,4 @@ kibana:
     - source: https://artifacts.elastic.co/downloads/kibana/kibana-5.6.1-linux-x86_64.tar.gz
     - archive_format: tar
     - options: xf
-    - source_hash: 'sha512=0228487f486ea2b3d68d6d493c4ae0d23c7317fa690c723c8fb2e0b150d095e71a6411d08a01e2da5e37e0f3ae2d7f9b6d8f0807116b93f8773649b83f7f4b8c'
+    - source_hash: 'sha512=b7fccd1bbd9a884f3b8b46ca8f166561d17935215607ff7f2c6fc20a423e4c81b2a1a0302419b86a75641bc634c7f5a8c0096d284cac0c8e7344e60baa818235'
